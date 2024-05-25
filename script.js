@@ -1,36 +1,32 @@
 
-function SimuladorClima(temperaturaInicial) {
-    this.temperatura = temperaturaInicial;
-  
-    
-    this.obterTemperatura = function() {
-      return this.temperatura;
-    }
-  
-    
-    this.aumentarTemperatura = function(graus) {
-      this.temperatura += graus;
-      console.log("Temperatura aumentada para " + this.temperatura + " graus.");
-    }
-  
-   
-    this.diminuirTemperatura = function(graus) {
-      this.temperatura -= graus;
-      console.log("Temperatura diminuída para " + this.temperatura + " graus.");
-    }
-  }
-  
-  
-  var simulador = new SimuladorClima(20);
-  
-  
-  console.log("Temperatura inicial: " + simulador.obterTemperatura() + " graus.");
-  
-  
-  simulador.aumentarTemperatura(5);
-  
-  
-  simulador.diminuirTemperatura(3);
-  
+let entrada = prompt("Digite a temperatura atual.");
 
-  
+function SimuladorClima(temperaturaInicial) {
+  this.entrada = temperaturaInicial;
+
+  this.obterTemperatura = function() {
+    return this.entrada;
+  }
+
+  this.aumentarTemperatura = function(graus) {
+    this.entrada += graus;
+    alert("Temperatura aumentada para " + this.entrada + " graus.");
+  }
+
+  this.diminuirTemperatura = function(graus) {
+    this.entrada -= graus;
+    alert("Temperatura diminuída para " + this.entrada + " graus.");
+  }
+}
+
+const simulador = new SimuladorClima(parseFloat(entrada)); 
+
+alert("Temperatura inicial: " + simulador.obterTemperatura() + " graus.");
+
+let aumento = parseFloat(prompt("Quantos graus deseja aumentar a temperatura?"));
+simulador.aumentarTemperatura(aumento);
+
+let diminuicao = parseFloat(prompt("Quantos graus deseja diminuir a temperatura?"));
+simulador.diminuirTemperatura(diminuicao);
+
+
